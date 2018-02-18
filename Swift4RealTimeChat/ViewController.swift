@@ -25,6 +25,10 @@ class ViewController: UIViewController,UITableViewDataSource {
     override func viewDidLoad() {
         super.viewDidLoad()
         table.dataSource = self
+        nameTextField.layer.borderColor = UIColor.black.cgColor
+        commentTextFeild.layer.borderColor = UIColor.black.cgColor
+        nameTextField.layer.borderWidth = 1.0
+        commentTextFeild.layer.borderWidth = 1.0
         // Do any additional setup after loading the view, typically from a nib.
     }
     
@@ -37,6 +41,7 @@ class ViewController: UIViewController,UITableViewDataSource {
         //db接続、データの読子に
         db = Database.database().reference()
         db.ref.child("chat").child("message").observe(.value) { (snap) in
+            self.getMainArray = [[String]]()
             for item in snap.children {
                 //ここは非常にハマるfirebaseはjson形式なので変換が必要
                 let child = item as! DataSnapshot
@@ -63,7 +68,7 @@ class ViewController: UIViewController,UITableViewDataSource {
     }
     //保存ボタンを押した時の処理
     @IBAction func sendButton(_ sender: Any) {
-        getMainArray = [[String]]()
+        
         contentsArray = ["name": nameTextField.text!,"contents": commentTextFeild.text!]
         //db接続、書き込み
         db.ref.child("chat").child("message").childByAutoId().setValue(contentsArray)
