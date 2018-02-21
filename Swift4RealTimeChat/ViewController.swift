@@ -10,27 +10,32 @@ import UIKit
 import Firebase
 
 class ViewController: UIViewController,UITableViewDataSource,UITextFieldDelegate {
-   
+   //UITableViewDataSource == tableViewを使うのにいる
+   //UITextFieldDelegate == リターンキーを押した時の処理を行うのに使う
     
     var db: DatabaseReference!
     
     
     @IBOutlet weak var table: UITableView!
-    
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var commentTextFeild: UITextField!
+    
     var contentsArray = [String: String]()
     var getArray = [String]()
     var getMainArray = [[String]]()
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         table.dataSource = self
         nameTextField.delegate = self
         commentTextFeild.delegate = self
+        //textFieldの枠、これはなくてもいい
         nameTextField.layer.borderColor = UIColor.black.cgColor
         commentTextFeild.layer.borderColor = UIColor.black.cgColor
         nameTextField.layer.borderWidth = 1.0
         commentTextFeild.layer.borderWidth = 1.0
+        //tableViewの幅を指定
         table.rowHeight = 75.0
         // Do any additional setup after loading the view, typically from a nib.
     }
@@ -43,6 +48,7 @@ class ViewController: UIViewController,UITableViewDataSource,UITextFieldDelegate
     override func viewWillAppear(_ animated: Bool) {
         //db接続、データの読子に
         db = Database.database().reference()
+        //指定したディレクトリに変更が加わった時に呼ばれる
         db.ref.child("chat").child("message").observe(.value) { (snap) in
             self.getMainArray = [[String]]()
             for item in snap.children {
@@ -75,6 +81,7 @@ class ViewController: UIViewController,UITableViewDataSource,UITextFieldDelegate
         contentsArray = ["name": nameTextField.text!,"contents": commentTextFeild.text!]
         //db接続、書き込み
         db.ref.child("chat").child("message").childByAutoId().setValue(contentsArray)
+        //textField初期化
         nameTextField.text = ""
         commentTextFeild.text = ""
         
