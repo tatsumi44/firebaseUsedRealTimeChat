@@ -9,7 +9,7 @@
 import UIKit
 import Firebase
 
-class ViewController: UIViewController,UITableViewDataSource {
+class ViewController: UIViewController,UITableViewDataSource,UITextFieldDelegate {
    
     
     var db: DatabaseReference!
@@ -25,10 +25,13 @@ class ViewController: UIViewController,UITableViewDataSource {
     override func viewDidLoad() {
         super.viewDidLoad()
         table.dataSource = self
+        nameTextField.delegate = self
+        commentTextFeild.delegate = self
         nameTextField.layer.borderColor = UIColor.black.cgColor
         commentTextFeild.layer.borderColor = UIColor.black.cgColor
         nameTextField.layer.borderWidth = 1.0
         commentTextFeild.layer.borderWidth = 1.0
+        table.rowHeight = 75.0
         // Do any additional setup after loading the view, typically from a nib.
     }
     
@@ -75,6 +78,11 @@ class ViewController: UIViewController,UITableViewDataSource {
         nameTextField.text = ""
         commentTextFeild.text = ""
         
+    }
+    //リターンを押したら入力画面を閉じる
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
     }
     
     
