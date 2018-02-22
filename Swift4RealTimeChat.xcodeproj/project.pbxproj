@@ -14,6 +14,7 @@
 		B9DE862E203960E5004F1F42 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B9DE862D203960E5004F1F42 /* Assets.xcassets */; };
 		B9DE8631203960E5004F1F42 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B9DE862F203960E5004F1F42 /* LaunchScreen.storyboard */; };
 		B9DE8639203961F4004F1F42 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B9DE8638203961F4004F1F42 /* GoogleService-Info.plist */; };
+		B9FBE73C203E6AD900BC8A45 /* hukidashi.png in Resources */ = {isa = PBXBuildFile; fileRef = B9FBE73B203E6AD900BC8A45 /* hukidashi.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +28,7 @@
 		B9DE8630203960E5004F1F42 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B9DE8632203960E6004F1F42 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B9DE8638203961F4004F1F42 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		B9FBE73B203E6AD900BC8A45 /* hukidashi.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hukidashi.png; sourceTree = "<group>"; };
 		DBE4DA1142ED7A7C7DED9665 /* Pods-Swift4RealTimeChat.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Swift4RealTimeChat.release.xcconfig"; path = "Pods/Target Support Files/Pods-Swift4RealTimeChat/Pods-Swift4RealTimeChat.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -72,6 +74,7 @@
 		B9DE8625203960E5004F1F42 /* Swift4RealTimeChat */ = {
 			isa = PBXGroup;
 			children = (
+				B9FBE73B203E6AD900BC8A45 /* hukidashi.png */,
 				B9DE8638203961F4004F1F42 /* GoogleService-Info.plist */,
 				B9DE8626203960E5004F1F42 /* AppDelegate.swift */,
 				B9DE8628203960E5004F1F42 /* ViewController.swift */,
@@ -154,6 +157,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B9DE8639203961F4004F1F42 /* GoogleService-Info.plist in Resources */,
+				B9FBE73C203E6AD900BC8A45 /* hukidashi.png in Resources */,
 				B9DE8631203960E5004F1F42 /* LaunchScreen.storyboard in Resources */,
 				B9DE862E203960E5004F1F42 /* Assets.xcassets in Resources */,
 				B9DE862C203960E5004F1F42 /* Main.storyboard in Resources */,

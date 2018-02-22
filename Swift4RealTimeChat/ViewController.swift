@@ -38,7 +38,7 @@ class ViewController: UIViewController,UITableViewDataSource,UITextFieldDelegate
         //使用していないセルの線を消す
         table.tableFooterView = UIView(frame: .zero)
         //tableViewの幅を指定
-        table.rowHeight = 40.0
+        table.rowHeight = 60.0
         // Do any additional setup after loading the view, typically from a nib.
     }
     
@@ -74,7 +74,9 @@ class ViewController: UIViewController,UITableViewDataSource,UITextFieldDelegate
     //セルの内容
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell")
-        cell?.textLabel?.text = "\(getMainArray[indexPath.row][0]):\(getMainArray[indexPath.row][1])"
+        let cellImageview = cell?.contentView.viewWithTag(1) as! UIImageView
+        cellImageview.image = UIImage(named:"hukidashi.png")
+        cell?.textLabel?.text = "  \(getMainArray[indexPath.row][0]):\(getMainArray[indexPath.row][1])"
         return cell!
     }
     //保存ボタンを押した時の処理
