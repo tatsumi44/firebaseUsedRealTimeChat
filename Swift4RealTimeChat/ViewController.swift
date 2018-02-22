@@ -35,8 +35,10 @@ class ViewController: UIViewController,UITableViewDataSource,UITextFieldDelegate
         commentTextFeild.layer.borderColor = UIColor.black.cgColor
         nameTextField.layer.borderWidth = 1.0
         commentTextFeild.layer.borderWidth = 1.0
+        //使用していないセルの線を消す
+        table.tableFooterView = UIView(frame: .zero)
         //tableViewの幅を指定
-        table.rowHeight = 75.0
+        table.rowHeight = 40.0
         // Do any additional setup after loading the view, typically from a nib.
     }
     
